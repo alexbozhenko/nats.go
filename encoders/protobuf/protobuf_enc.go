@@ -15,9 +15,7 @@ package protobuf
 
 import (
 	"errors"
-
-	"github.com/nats-io/nats.go"
-	"google.golang.org/protobuf/proto"
+	// "google.golang.org/protobuf/proto"
 )
 
 //lint:file-ignore SA1019 Ignore deprecation warnings for EncodedConn
@@ -27,10 +25,10 @@ const (
 	PROTOBUF_ENCODER = "protobuf"
 )
 
-func init() {
-	// Register protobuf encoder
-	nats.RegisterEncoder(PROTOBUF_ENCODER, &ProtobufEncoder{})
-}
+// func init() {
+// 	// Register protobuf encoder
+// 	nats.RegisterEncoder(PROTOBUF_ENCODER, &ProtobufEncoder{})
+// }
 
 // ProtobufEncoder is a protobuf implementation for EncodedConn
 // This encoder will use the builtin protobuf lib to Marshal

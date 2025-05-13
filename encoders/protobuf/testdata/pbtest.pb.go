@@ -144,41 +144,41 @@ var file_pbtest_proto_depIdxs = []int32{
 	0, // [0:2] is the sub-list for field type_name
 }
 
-func init() { file_pbtest_proto_init() }
-func file_pbtest_proto_init() {
-	if File_pbtest_proto != nil {
-		return
-	}
-	if !protoimpl.UnsafeEnabled {
-		file_pbtest_proto_msgTypes[0].Exporter = func(v any, i int) any {
-			switch v := v.(*Person); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-	}
-	type x struct{}
-	out := protoimpl.TypeBuilder{
-		File: protoimpl.DescBuilder{
-			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_pbtest_proto_rawDesc,
-			NumEnums:      0,
-			NumMessages:   2,
-			NumExtensions: 0,
-			NumServices:   0,
-		},
-		GoTypes:           file_pbtest_proto_goTypes,
-		DependencyIndexes: file_pbtest_proto_depIdxs,
-		MessageInfos:      file_pbtest_proto_msgTypes,
-	}.Build()
-	File_pbtest_proto = out.File
-	file_pbtest_proto_rawDesc = nil
-	file_pbtest_proto_goTypes = nil
-	file_pbtest_proto_depIdxs = nil
-}
+// func init() { file_pbtest_proto_init() }
+// func file_pbtest_proto_init() {
+// 	if File_pbtest_proto != nil {
+// 		return
+// 	}
+// 	if !protoimpl.UnsafeEnabled {
+// 		file_pbtest_proto_msgTypes[0].Exporter = func(v any, i int) any {
+// 			switch v := v.(*Person); i {
+// 			case 0:
+// 				return &v.state
+// 			case 1:
+// 				return &v.sizeCache
+// 			case 2:
+// 				return &v.unknownFields
+// 			default:
+// 				return nil
+// 			}
+// 		}
+// 	}
+// 	type x struct{}
+// 	out := protoimpl.TypeBuilder{
+// 		File: protoimpl.DescBuilder{
+// 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
+// 			RawDescriptor: file_pbtest_proto_rawDesc,
+// 			NumEnums:      0,
+// 			NumMessages:   2,
+// 			NumExtensions: 0,
+// 			NumServices:   0,
+// 		},
+// 		GoTypes:           file_pbtest_proto_goTypes,
+// 		DependencyIndexes: file_pbtest_proto_depIdxs,
+// 		MessageInfos:      file_pbtest_proto_msgTypes,
+// 	}.Build()
+// 	File_pbtest_proto = out.File
+// 	file_pbtest_proto_rawDesc = nil
+// 	file_pbtest_proto_goTypes = nil
+// 	file_pbtest_proto_depIdxs = nil
+// }

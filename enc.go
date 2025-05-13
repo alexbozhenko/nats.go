@@ -19,9 +19,7 @@ import (
 	"reflect"
 	"sync"
 	"time"
-
 	// Default Encoders
-	"github.com/nats-io/nats.go/encoders/builtin"
 )
 
 //lint:file-ignore SA1019 Ignore deprecation warnings for EncodedConn
@@ -44,13 +42,13 @@ const (
 	DEFAULT_ENCODER = "default"
 )
 
-func init() {
-	encMap = make(map[string]Encoder)
-	// Register json, gob and default encoder
-	RegisterEncoder(JSON_ENCODER, &builtin.JsonEncoder{})
-	RegisterEncoder(GOB_ENCODER, &builtin.GobEncoder{})
-	RegisterEncoder(DEFAULT_ENCODER, &builtin.DefaultEncoder{})
-}
+// func init() {
+// 	encMap = make(map[string]Encoder)
+// 	// Register json, gob and default encoder
+// 	RegisterEncoder(JSON_ENCODER, &builtin.JsonEncoder{})
+// 	RegisterEncoder(GOB_ENCODER, &builtin.GobEncoder{})
+// 	RegisterEncoder(DEFAULT_ENCODER, &builtin.DefaultEncoder{})
+// }
 
 // EncodedConn are the preferred way to interface with NATS. They wrap a bare connection to
 // a nats server and have an extendable encoder system that will encode and decode messages
