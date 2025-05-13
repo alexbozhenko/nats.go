@@ -2078,10 +2078,10 @@ func (nc *Conn) createConn() (err error) {
 	u := nc.current.url
 
 	if !nc.Opts.SkipHostLookup && net.ParseIP(u.Hostname()) == nil {
-		addrs, _ := net.LookupHost(u.Hostname())
-		for _, addr := range addrs {
-			hosts = append(hosts, net.JoinHostPort(addr, u.Port()))
-		}
+		// addrs, _ := net.LookupHost(u.Hostname())
+		// for _, addr := range addrs {
+		// 	hosts = append(hosts, net.JoinHostPort(addr, u.Port()))
+		// }
 	}
 	// Fall back to what we were given.
 	if len(hosts) == 0 {
@@ -2166,30 +2166,32 @@ func (nc *Conn) makeTLSConn() error {
 		}
 	}
 	nc.conn = tls.Client(nc.conn, tlsCopy)
-	conn := nc.conn.(*tls.Conn)
-	if err := conn.Handshake(); err != nil {
-		return err
-	}
+	// conn := nc.conn
+	// if err := conn.Handshake(); err != nil {
+	// 	return err
+	// }
 	nc.bindToNewConn()
 	return nil
 }
 
 // TLSConnectionState retrieves the state of the TLS connection to the server
 func (nc *Conn) TLSConnectionState() (tls.ConnectionState, error) {
-	if !nc.isConnected() {
-		return tls.ConnectionState{}, ErrDisconnected
-	}
+	return tls.ConnectionState{}, ErrDisconnected
+	// if !nc.isConnected() {
+	// 	returntls.ConnectionState{}, ErrDisconnected
+	// }
 
-	nc.mu.RLock()
-	conn := nc.conn
-	nc.mu.RUnlock()
+	// nc.mu.RLock()
+	// conn := nc.conn
+	// nc.mu.RUnlock()
 
-	tc, ok := conn.(*tls.Conn)
-	if !ok {
-		return tls.ConnectionState{}, ErrConnectionNotTLS
-	}
+	// // tc, ok := conn.(*tls.Conn)
+	// // if !ok {
+	// // 	return tls.ConnectionState{}, ErrConnectionNotTLS
+	// // }
 
-	return tc.ConnectionState(), nil
+	// // return tc.ConnectionState(), nil
+	// return nil, nil
 }
 
 // waitForExits will wait for all socket watcher Go routines to
